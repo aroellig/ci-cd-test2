@@ -13,8 +13,8 @@ node {
 
         rtMaven = Artifactory.newMavenBuild()
         rtMaven.tool = "M3" // Tool name from Jenkins configuration
-        rtMaven.deployer releaseRepo: "test-libs-release-local", snapshotRepo: "test-libs-snapshot-local", server: server
-        rtMaven.resolver releaseRepo: "test-libs-release-local", snapshotRepo: "test-libs-snapshot-local", server: server
+        rtMaven.deployer releaseRepo: "test-libs-release", snapshotRepo: "test-libs-snapshot", server: server
+        rtMaven.resolver releaseRepo: "test-libs-release", snapshotRepo: "test-libs-snapshot", server: server
         rtMaven.deployer.deployArtifacts = false // Disable artifacts deployment during Maven run
 
         buildInfo = Artifactory.newBuildInfo()
