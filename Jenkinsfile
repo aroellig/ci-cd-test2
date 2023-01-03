@@ -12,9 +12,9 @@ node {
         server = Artifactory.server cicd-test
 
         rtMaven = Artifactory.newMavenBuild()
-        rtMaven.tool = MAVEN_TOOL // Tool name from Jenkins configuration
-        rtMaven.deployer releaseRepo: ARTIFACTORY_LOCAL_RELEASE_REPO, snapshotRepo: ARTIFACTORY_LOCAL_SNAPSHOT_REPO, server: server
-        rtMaven.resolver releaseRepo: ARTIFACTORY_VIRTUAL_RELEASE_REPO, snapshotRepo: ARTIFACTORY_VIRTUAL_SNAPSHOT_REPO, server: server
+        rtMaven.tool = M3 // Tool name from Jenkins configuration
+        rtMaven.deployer releaseRepo: test-libs-release-local, snapshotRepo: test-libs-snapshot-local, server: server
+        rtMaven.resolver releaseRepo: test-libs-release-local, snapshotRepo: test-libs-snapshot-local, server: server
         rtMaven.deployer.deployArtifacts = false // Disable artifacts deployment during Maven run
 
         buildInfo = Artifactory.newBuildInfo()
