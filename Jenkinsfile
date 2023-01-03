@@ -9,7 +9,7 @@ node {
  
     stage ('Artifactory configuration') {
         // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
-        server = Artifactory.server SERVER_ID
+        server = Artifactory.server cicd-test
 
         rtMaven = Artifactory.newMavenBuild()
         rtMaven.tool = MAVEN_TOOL // Tool name from Jenkins configuration
